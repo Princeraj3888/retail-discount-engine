@@ -14,9 +14,7 @@ A modular Java backend system to calculate and apply retail discounts based on c
 - In-memory H2 database with sample data
 - High unit test coverage with Mockito and JUnit
 - Clean architecture using Spring Boot & OOP principles
-
 ---
-
 ## Technologies Used
 
 - Java 17+
@@ -38,11 +36,12 @@ A modular Java backend system to calculate and apply retail discounts based on c
 ## bash
 git clone https://github.com/Princeraj3888/retail-discount-engine.git
 cd retail-discount-engine
-
+---
 ## Build the Project
 ##```bash
 mvn clean install
 
+---
 ## Run the Application
 mvn spring-boot:run
 
@@ -51,12 +50,15 @@ Or package and run:
 mvn package
 java -jar target/retail-discount-engine.jar
 
+---
 ## run unit tests 
 mvn test
 
+---
 ## Access API
 Base URL: http://localhost:8000
 
+---
 ## Example Endpoint:
 POST method, 
 http://localhost:8000/api/billing/calculate
@@ -90,6 +92,7 @@ curl --location 'http://localhost:8000/api/billing/calculate' \
 "items": [102, 103]
 }'
 
+---
 ## Key Business Rules Implemented
 Employee → 30% discount
 Affiliate → 10% discount
@@ -98,6 +101,7 @@ Flat Discount: $5 off per $100 spent (applies to all customers)
 Groceries Exclusion: Percentage discounts don’t apply to grocery items
 Only one percentage discount applies per order (choose the highest one)
 
+---
 ## Key Design Decisions & Assumptions
 Strategy Pattern for Discounts
 Each discount (Employee, Affiliate, etc.) is a DiscountStrategy implementation.
@@ -125,17 +129,21 @@ All prices are in USD.
 Bill history is optional and not persisted in current version.
 Blacklisted customers are ignored or excluded if used.
 
-
+---
 ## H2 console
+## url
 http://localhost:8000/h2-console/
+
 jdbc url: jdbc:h2:mem:retail_discount_engine_db
+
 username: sa
 
 note : the initial data added using data.sql from code
 
+---
 ## uml diagram path 
-retail-discount-engine
-/docs/uml.png
+retail-discount-engine/docs/uml.png
 
+---
 ## git hub repository
 https://github.com/Princeraj3888/retail-discount-engine.git
